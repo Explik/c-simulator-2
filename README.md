@@ -60,3 +60,19 @@ const root = [
 ];
 ```
 
+## Node types
+Identifier: ``{ type: 'label', name: string }`` 
+Constant: ``{ type: 'constant', value: string, datatype: string }``
+
+Binary expression: ``{ type: 'binary-expression', operator: string, left: node, right: node }``
+Unary expression: ``{ type: 'unary-expression', operator: string, argument: node, prefix: boolean }``
+Call expression: ``{ type: 'call-expression', callee: node, arguments: node[] }``
+Conditional expression: ``{ type: 'conditional-expression', test: node, consequent: node, alternate: node }``
+Assignment-expression: ``{ type: 'assignment-expression', operator: string, left: node, right: node }``
+Block statement: ``{ type: 'block-statement', body: node[] }``
+
+Variable declaration: ``{ type: 'variable-declaration', kind: string, declarations: node[] }``
+Function declaration: ``{ type: 'function-declaration', return-type: string, name: node, params: node[], body: node }``
+Return statement: ``{ type: 'return-statement', argument: node }``
+If statement: ``{ type: 'if-statement', test: node, consequent: node, alternate: node }``
+For statement: ``{ type: 'for-statement', init: node, test: node, update: node, body: node }``
